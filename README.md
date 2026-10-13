@@ -77,9 +77,9 @@ Scenario: the H1–H9 corridor is lost at t = 5. Restoration starts at t = 20 wi
 
 ## Data sources
 
-- Occurrences: GBIF occurrence API; query and filters in `data/animals/provenance.json`. TODO: add download DOI.
+- Occurrences: GBIF occurrence API; query and filters in `data/animals/provenance.json`.
 - Traits: AVONET (Tobias et al. 2022), https://doi.org/10.6084/m9.figshare.16586228.v7 (CC BY 4.0).
-- Environmental rasters: TODO.
+- Environmental raster: WorldClim, SoilGrid
 
 ## Reference
 
