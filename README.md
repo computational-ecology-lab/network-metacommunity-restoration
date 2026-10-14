@@ -13,24 +13,24 @@ The example uses three woodland birds in Snowdonia (Eryri).
 
 ## Files
 
-```
-fetch_data.py             download and cache GBIF occurrences and AVONET traits (data/animals/)
-figure5.py                habitat network -> forecast -> Figure 5 panels; model settings in its docstring
-habitat_network.py        functions used by figure5.py: MaxEnt SDM, habitat patches, resistance, least-cost distances
-restoration_forecast.py   function used by figure5.py: integration of one model time step
-data/env/                 environmental rasters (elevation, slope, NDVI and NDWI are used)
-data/animals/             cached GBIF records, AVONET traits, habitat network and model results
-output/                   Figure 5 panels (PNG, PDF, SVG) and a ZIP of them
-```
 
+`data/animals/network.pkl` contains the habitat network used in the paper. These four files reproduce Figure 5:
+
+```
+figure5.py
+habitat_network.py
+restoration_forecast.py
+data/animals/network.pkl
+```
+Note: GBIF records are updated over time, so a rebuilt network can differ from the Figure 5.
 
 ## Run
 
 ```bash
 pip install numpy scipy pandas matplotlib rasterio scikit-learn scikit-image openpyxl
 
-python fetch_data.py                # only one run needed; cached files are reused
-python figure5.py                   # forecast and panels (builds the network if data/animals/network.pkl is missing)
+python fetch_data.py                
+python figure5.py                   # forecast and panels (builds the network if data/animals/network.pkl is missing
 python figure5.py --rebuild         # rebuild the habitat network from the cached data
 python figure5.py --plots-only      # redraw panels from data/animals/trajectories.npz
 ```
